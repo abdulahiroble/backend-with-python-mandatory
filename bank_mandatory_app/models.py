@@ -22,6 +22,7 @@ class Employee(models.Model):
     
 class Group(models.Model):
     type_id = models.IntegerField()
+    name = models.CharField(max_length=100)
     
     
 class Loans(models.Model):
