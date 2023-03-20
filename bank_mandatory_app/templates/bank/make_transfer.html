@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block main %}
+<form action="{% url 'bank_mandatory_app:make_transfer' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        {{ form }}
+    <button>Transfer</button>
+    </fieldset>
+</form>
+{% endblock main %}
