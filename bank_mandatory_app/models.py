@@ -25,23 +25,39 @@ class Customer(models.Model):
     birth_date = models.DateField()
     group_type = models.IntegerField()
     # accounts = models.ManyToManyField('Accounts', through='Customer')
-
+    
+    def __str__(self):
+        return f'{self.name}' 
+        
 class Account(models.Model):
     customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
     balance = models.DecimalField(max_digits=10, decimal_places=2)
+    
+    def __str__(self):
+        return f'{self.customer_id.name} - {self.balance}'
+    
 
-# class Employee(models.Model):
-#     name = models.CharField(max_length=100)
-#     phone = models.CharField(max_length=100)
-#     password = models.CharField(max_length=100)
-#     role = models.IntegerField()
+class Employee(models.Model):
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    role = models.IntegerField()
     
-# class Group(models.Model):
-#     type_id = models.IntegerField()
-#     name = models.CharField(max_length=100)
+    def __str__(self):
+        return f'{self.name}'
+    
+class Group(models.Model):
+    type_id = models.IntegerField()
+    name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return f'{self.name}'
     
     
-# class Loans(models.Model):
-#     customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
-#     amount = models.DecimalField(max_digits=10, decimal_places=2)
-#     rate = models.DecimalField(max_digits=3, decimal_places=2)
+class Loans(models.Model):
+    customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    rate = models.DecimalField(max_digits=3, decimal_places=2)
+    
+    def __str__(self):
+        return f'{self.customer_id.name} - {self.amount}'
