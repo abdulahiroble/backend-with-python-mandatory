@@ -6,18 +6,18 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'holiday.css' %}" media="screen" />
     <link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}" media="screen" />
-    <title>KEA Bank</title>
+    <title>Vita Bank</title>
 </head>
 <body>
 
     {% load l10n %}
 
     <header>
-        <h1>KEA Bank</h1>
+        <h1>Vita Bank</h1>
         {% if user.is_staff %}
         <h2>Bank Staff Portal</h2>
         {% else %}
-        <h2>Bank Customer Portal</h2>
+        <h2>Customer Portal</h2>
         {% endif %}
     </header>
 
@@ -42,7 +42,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2021 Fat Cats Corp.</p>
+        <p>&copy; 2023 Vita Bank.</p>
     </footer>
     <script src="https://unpkg.com/htmx.org@1.5.0" integrity="sha384-oGA+prIp5Vchu6we2YkI51UtVzN9Jpx2Z7PnR1I78PnZlN8LkrCT4lqqqmDkyrvI" crossorigin="anonymous"></script>
     <script>

@@ -6,7 +6,7 @@ app_name = "bank_mandatory_app"
 urlpatterns = [
     path('', views.index, name='index'),
 
-    # path('dashboard/', views.dashboard, name='dashboard'),
+    path('dashboard/', views.dashboard, name='dashboard'),
     # path('account_details/<int:pk>/', views.account_details, name='account_details'),
     # path('transaction_details/<int:transaction>/', views.transaction_details, name='transaction_details'),
     # path('make_transfer/', views.make_transfer, name='make_transfer'),
